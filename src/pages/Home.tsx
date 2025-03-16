@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteUser } from "../redux/userSlice";
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
-import {User} from "../redux/userSlice"
+import { User } from "../redux/userSlice";
 const Home = () => {
   const users = useSelector((state: RootState) => state.users.users);
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const Home = () => {
               "Birth Date",
               "Gender",
               "Bio",
-              "Actions"
+              "Actions",
             ].map((head) => (
               <th key={head} className="border border-white p-2 ">
                 {head}
@@ -34,7 +34,7 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user:User) => (
+          {users.map((user: User) => (
             <tr key={user.id} className="odd:bg-inherit even:bg-inherit">
               <td className="border border-gray-500 p-2">{user.firstName}</td>
               <td className="border border-gray-500 p-2">{user.lastName}</td>

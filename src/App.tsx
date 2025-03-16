@@ -1,12 +1,12 @@
-import React from 'react'
-import AppRouter from './routes/AppRouter'
+import React from "react";
+import AppRouter from "./routes/AppRouter";
 
 const App = () => {
   return (
     <div>
-      <AppRouter/>
+      <AppRouter />
     </div>
-  )
-}
+  );
+};
 
-export default React.memo(App) 
+export default React.memo(App);

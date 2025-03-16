@@ -17,7 +17,7 @@ interface User {
 const EditUser = () => {
   const { id } = useParams<{ id: string }>();
   const user = useSelector((state: RootState) =>
-    state.users.users.find((u) => u.id === id)
+    state.users.users.find((u) => u.id === id),
   );
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -49,20 +49,25 @@ const EditUser = () => {
         onSubmit={handleSubmit}
         className="space-y-4 flex flex-col items-center gap-2 w-[800px]"
       >
-        {["firstName", "lastName", "profession", "birthDate", "gender", "bio"].map(
-          (field) => (
-            <input
-              key={field}
-              name={field}
-              type="text"
-              placeholder={field}
-              value={(formData as any)[field]}
-              className="inp bg-inherit border rounded-md w-full"
-              onChange={handleChange}
-              required
-            />
-          )
-        )}
+        {[
+          "firstName",
+          "lastName",
+          "profession",
+          "birthDate",
+          "gender",
+          "bio",
+        ].map((field) => (
+          <input
+            key={field}
+            name={field}
+            type="text"
+            placeholder={field}
+            value={(formData as any)[field]}
+            className="inp bg-inherit border rounded-md w-full"
+            onChange={handleChange}
+            required
+          />
+        ))}
         <button
           type="submit"
           className="btn bg-blue-500 !text-white px-4 py-2 rounded active:bg-blue-700 transition duration-300 ease-in-out"

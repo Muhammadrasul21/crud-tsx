@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,25 +13,24 @@ h1 {
   letter-spacing: 3px;
   font-weight: 600;
 }
-  
-.inp{
+
+.inp {
   padding: 4px;
 }
-.btn{
+.btn {
   padding: 8px 20px 8px 20px;
 }
 
-.mt{
+.mt {
   margin-top: 30px;
 }
-.edit{
-  padding: 2px 20px 2px 20px ;
+.edit {
+  padding: 2px 20px 2px 20px;
   margin-bottom: 10px;
   margin-left: 15px;
   margin-right: -10px;
   margin-top: 10px;
 }
-.wrapper{
-  padding: 0px 30px 0px 30px ;
-
+.wrapper {
+  padding: 0px 30px 0px 30px;
 }

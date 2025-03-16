@@ -1,6 +1,6 @@
 import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
 
- export interface User {
+export interface User {
   id: string;
   firstName: string;
   lastName: string;
@@ -39,7 +39,9 @@ const usersSlice = createSlice({
       state.users = state.users.filter((user) => user.id !== action.payload);
     },
     updateUser: (state, action: PayloadAction<User>) => {
-      const index = state.users.findIndex((user) => user.id === action.payload.id);
+      const index = state.users.findIndex(
+        (user) => user.id === action.payload.id,
+      );
       if (index !== -1) {
         state.users[index] = action.payload;
       }

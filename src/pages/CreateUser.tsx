@@ -47,7 +47,14 @@ const CreateUser: React.FC = () => {
         onSubmit={handleSubmit}
         className="space-y-4 flex flex-col items-center gap-2 w-[800px]"
       >
-        {["firstName", "lastName", "profession", "birthDate", "gender", "bio"].map((field) => (
+        {[
+          "firstName",
+          "lastName",
+          "profession",
+          "birthDate",
+          "gender",
+          "bio",
+        ].map((field) => (
           <input
             key={field}
             name={field}
