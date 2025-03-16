@@ -47,30 +47,25 @@ const CreateUser: React.FC = () => {
         onSubmit={handleSubmit}
         className="space-y-4 flex flex-col items-center gap-2 w-[800px]"
       >
-        {[
-          "firstName",
-          "lastName",
-          "profession",
-          "birthDate",
-          "gender",
-          "bio",
-        ].map((field) => (
-          <input
-            key={field}
-            name={field}
-            type="text"
-            placeholder={field}
-            className="inp bg-inherit border rounded-md w-full"
-            onChange={handleChange}
-            required
-          />
-        ))}
+        {["title", "description", "price", "discount", "author"].map(
+          (field) => (
+            <input
+              key={field}
+              name={field}
+              type="text"
+              placeholder={field}
+              className="inp bg-inherit border rounded-md w-full"
+              onChange={handleChange}
+              required
+            />
+          ),
+        )}
         <div>
           <button
             type="submit"
             className="btn bg-green-500 !text-white p-2 rounded mb-4 mt-10 active:bg-green-600 transition duration-300 ease-in-out"
           >
-            Add User
+            Add Book
           </button>
         </div>
       </form>

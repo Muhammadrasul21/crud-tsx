@@ -3,6 +3,7 @@ import { deleteUser } from "../redux/userSlice";
 import { Link } from "react-router-dom";
 import { RootState } from "../redux/store";
 import { User } from "../redux/userSlice";
+
 const Home = () => {
   const users = useSelector((state: RootState) => state.users.users);
   const dispatch = useDispatch();
@@ -13,21 +14,20 @@ const Home = () => {
         to="/create"
         className="btn mt bg-green-500 !text-white px-4 py-2 rounded mb-4 inline-block active:bg-green-600 duration-300 ease-in-out"
       >
-        Add User
+        Add Book
       </Link>
-      <table className="w-full h-20 border-collapse border bg-inherit text-white text-center">
-        <thead className="">
+      <table className="w-full border-collapse border bg-inherit text-white text-center">
+        <thead>
           <tr className="border border-gray-600 p-2">
             {[
-              "First Name",
-              "Last Name",
-              "Profession",
-              "Birth Date",
-              "Gender",
-              "Bio",
+              "Title",
+              "Description",
+              "Price",
+              "Discount",
+              "Author",
               "Actions",
             ].map((head) => (
-              <th key={head} className="border border-white p-2 ">
+              <th key={head} className="border border-white p-2">
                 {head}
               </th>
             ))}
@@ -36,13 +36,12 @@ const Home = () => {
         <tbody>
           {users.map((user: User) => (
             <tr key={user.id} className="odd:bg-inherit even:bg-inherit">
-              <td className="border border-gray-500 p-2">{user.firstName}</td>
-              <td className="border border-gray-500 p-2">{user.lastName}</td>
-              <td className="border border-gray-500 p-2">{user.profession}</td>
-              <td className="border border-gray-500 p-2">{user.birthDate}</td>
-              <td className="border border-gray-500 p-2">{user.gender}</td>
-              <td className="border border-gray-500 p-2">{user.bio}</td>
-              <td className="flex items-center justify-center pb-2 ">
+              <td className="border border-gray-500 p-2">{user.title}</td>
+              <td className="border border-gray-500 p-2">{user.description}</td>
+              <td className="border border-gray-500 p-2">${user.price}</td>
+              <td className="border border-gray-500 p-2">{user.discount}$</td>
+              <td className="border border-gray-500 p-2">{user.author}</td>
+              <td className="flex items-center justify-center gap-2 border border-gray-500 p-2">
                 <Link
                   to={`/edit/${user.id}`}
                   className="edit bg-yellow-500 !text-white rounded p-1 px-3"

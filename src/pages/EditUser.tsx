@@ -39,35 +39,30 @@ const EditUser = () => {
   };
 
   if (!formData) {
-    return <div className="text-center text-white">User not found</div>;
+    return <div className="text-center text-white">Book not found</div>;
   }
 
   return (
     <div className="p-4 bg-inherit text-black flex flex-col justify-center items-center gap-4">
-      <h1 className="text-2xl font-bold mb-4">Edit User</h1>
+      <h1 className="text-2xl font-bold mb-4">Edit Book</h1>
       <form
         onSubmit={handleSubmit}
         className="space-y-4 flex flex-col items-center gap-2 w-[800px]"
       >
-        {[
-          "firstName",
-          "lastName",
-          "profession",
-          "birthDate",
-          "gender",
-          "bio",
-        ].map((field) => (
-          <input
-            key={field}
-            name={field}
-            type="text"
-            placeholder={field}
-            value={(formData as any)[field]}
-            className="inp bg-inherit border rounded-md w-full"
-            onChange={handleChange}
-            required
-          />
-        ))}
+        {["title", "description", "price", "discount", "author"].map(
+          (field) => (
+            <input
+              key={field}
+              name={field}
+              type="text"
+              placeholder={field}
+              value={(formData as any)[field]}
+              className="inp bg-inherit border rounded-md w-full"
+              onChange={handleChange}
+              required
+            />
+          ),
+        )}
         <button
           type="submit"
           className="btn bg-blue-500 !text-white px-4 py-2 rounded active:bg-blue-700 transition duration-300 ease-in-out"

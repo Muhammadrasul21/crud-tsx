@@ -2,12 +2,11 @@ import { createSlice, nanoid, PayloadAction } from "@reduxjs/toolkit";
 
 export interface User {
   id: string;
-  firstName: string;
-  lastName: string;
-  profession: string;
-  birthDate: string;
-  gender: string;
-  bio: string;
+  title: string;
+  description: string;
+  price: number;
+  discount: number;
+  author: string;
 }
 
 interface UsersState {
@@ -18,12 +17,11 @@ const initialState: UsersState = {
   users: [
     {
       id: "1",
-      firstName: "Muhammadrasul",
-      lastName: "Gulomjonov",
-      profession: "Frontend Developer",
-      birthDate: "09.01.2006",
-      gender: "Male",
-      bio: "Loves coding",
+      title: "Harry Potter",
+      description: "lorem",
+      price: 25,
+      discount: 18,
+      author: "J.K.Rowling",
     },
   ],
 };
